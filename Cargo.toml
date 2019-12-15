@@ -1,5 +1,5 @@
 [package]
-name = "guessing-game"
+name = "cli-input-output"
 version = "0.1.0"
 authors = ["Denis Onder <denis_onder@protonmail.com>"]
 edition = "2018"

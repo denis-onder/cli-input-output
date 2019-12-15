@@ -3,8 +3,11 @@ use std::string::String;
 use std::vec::Vec;
 
 fn display_inputs(vec: Vec<String>) {
+    println!("\n//----- Output -----");
+    let mut counter = 0;
     for i in vec {
-        println!("{}\n", i);
+        counter += 1;
+        println!("{}. {}", counter, i);
     }
 }
 
@@ -13,7 +16,7 @@ fn get_input() {
     let mut done = false;
     let mut vec: Vec<String> = Vec::new();
     while !done {
-        println!("{}. Your input:", vec.len());
+        println!("{}. Your input: (exit to quit)", vec.len());
         let mut user_input = String::new();
         // Read user input
         io::stdin()
@@ -24,7 +27,7 @@ fn get_input() {
         /* If user_input == "done", toggle the variable
          * Else, push the value to the output vector
          */
-        if res == "done" {
+        if res == "exit" {
             done = true;
         } else {
             vec.push(res);
