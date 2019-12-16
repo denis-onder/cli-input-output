@@ -1,19 +1,8 @@
 use std::fs::File;
 use std::fs::OpenOptions;
-// use std::io::prelude::*;
 use std::io::{self, prelude::*, BufReader};
 use std::path::Path;
 use std::string::String;
-// use std::vec::Vec;
-
-// fn display_inputs(vec: Vec<String>) {
-//     println!("\n//----- Output -----");
-//     let mut counter = 0;
-//     for i in vec {
-//         counter += 1;
-//         println!("{}. {}", counter, i);
-//     }
-// }
 
 fn display_inputs() -> io::Result<()> {
     let file_path: &Path = Path::new("./store.txt");
@@ -24,7 +13,6 @@ fn display_inputs() -> io::Result<()> {
         println!("{}", line?);
     }
     Ok(())
-    // let mut counter = 0;
 }
 
 fn store_to_file(todo: String) {
@@ -59,13 +47,11 @@ fn get_input() {
         // Trim whitespace
         let res = String::from(user_input.trim());
         /* If user_input == "done", toggle the variable.
-         * Else, push the value to the output vector.
-         * NOTE: Moving the storage to a text file.
+         * Else store to the store.txt file.
          */
         if res == "exit" {
             done = true;
         } else {
-            // vec.push(res);
             store_to_file(res);
             counter += 1;
         }
